@@ -1,0 +1,232 @@
+$primaryBg:#8AA2A9;
+$boxBg:#A1E5AB;
+$textColor:#4B3B47;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.boxes {
+    background-color: $primaryBg;
+    padding: 25px;
+    display: flex;
+    height: 300px;
+    //flex-direction: row; default
+    //flex-direction: column;
+    flex-wrap: wrap;
+
+    //justify-content:flex-start; default
+    //justify-content:flex-end; 
+    justify-content: center;
+    //justify-content: space-around; x 2x 2x x
+    //justify-content: space-evenly; x x x x
+
+    //align-items: stretch; default
+    align-items: center;
+    align-items: flex-start;
+    //align-items: flex-end;
+    //align-items: baseline; 
+
+    //align-content: stretch; default
+    //align-content: flex-start;
+    //align-content: flex-end;
+    //align-content: center;
+    //align-content: space-between;
+    //align-content: space-around;
+    //align-content: space-evenly;
+
+
+    .box {
+        background-color: $boxBg;
+        padding: 40px;
+        margin: 30px;
+        color: $textColor;
+        font-size: 28px;
+
+        //flex-grow: 1;
+        &1 {
+            /* align-self: flex-end;
+            //order:0;
+            flex-grow: 8; */
+        }
+
+        &2 {
+            /* height: 200px;
+            flex-grow: 4;
+            flex-basis: 200px;
+            flex-shrink: 0; */
+        }
+
+        &3 {
+            /* align-self: center;
+            //order:-1; */
+        }
+
+        &8 {
+            //flex-grow: 1;
+        }
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    background-color: #A2708A;
+
+    li {
+        a {
+            text-decoration: none;
+            color: #C1F7DC;
+            font-size: 24px;
+            display: block;
+            padding: 30px;
+
+            &:hover {
+                background-color: #BDA0BC;
+                color: #A2708A;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navigation {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navigation {
+        justify-content: center;
+        flex-direction: column;
+
+        li {
+            border-bottom: 1px solid #C1F7DC;
+
+            a {
+                text-align: center;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+.media-container {
+    background-color: #6A8EAE;
+    padding: 20px;
+
+    .media {
+        display: flex;
+        align-items: flex-start;
+        background-color: #8D91C7;
+        padding: 15px;
+        max-width: 600px;
+        border-radius: 3px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        .media-image {
+            background-color: #6E75A8;
+            padding: 60px;
+        }
+
+        .media-body {
+            margin-left: 20px;
+            color: #B0DAF1;
+            font-size: 18px;
+        }
+
+        .media-inner {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+}
+
+
+.header {
+    padding: 30px;
+    text-align: center;
+    background-color: #6A8EAE;
+}
+
+.navbar {
+    display: flex;
+    background-color: #157145;
+
+    a {
+        font-size: 24px;
+        padding: 20px;
+        text-decoration: none;
+        text-align: center;
+        color: #D1FAFF;
+
+        &:hover {
+            background: #57A773;
+        }
+    }
+}
+
+#main {
+    p {
+        margin: 10px;
+    }
+
+    display: flex;
+
+    #sidebar {
+        background-color: #6A8EAE;
+        flex: 25%;
+        padding: 20px;
+        order: 1;
+
+        .box {
+            margin-bottom: 20px;
+
+            .ph {
+                height: 300px;
+                background-color: #E76;
+                margin: 20px;
+            }
+
+            .ph5 {
+                height: 50px;
+                background-color: #E7DECD;
+                margin: 20px;
+            }
+        }
+    }
+
+    .content {
+        background-color: #8AA2A9;
+        flex: 75%;
+        padding: 20px;
+
+        .box {
+            margin-bottom: 20px;
+
+            .ph {
+                height: 300px;
+                background-color: #E7DECD;
+                padding: 20px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #main {
+        flex-direction: column;
+
+        #sidebar {
+            order: -1
+        }
+    }
+}
